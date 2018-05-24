@@ -101,7 +101,7 @@ class MenuController
             puts "Sorry, that is not a valid input"
             view_entry_n
         else
-            print @address_book[selection]
+            print @address_book[selection+1]
             main_menu
         end
     end
