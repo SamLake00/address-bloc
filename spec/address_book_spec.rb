@@ -100,6 +100,13 @@ RSpec.describe AddressBook do
             
             check_entry(entry_five, "Sussie", "555-555-2036", "sussie@blocmail.com")
         end
+        
+        it "imports from a second csv" do
+            book.import_from_csv("entries_2.csv")
+            book_size = book.entries.size
+            
+            expect(book_size).to eq(3)
+        end
     end
     
 end
