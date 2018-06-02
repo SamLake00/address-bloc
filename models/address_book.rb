@@ -79,4 +79,14 @@ require 'csv'
             
             return nil
         end
+        
+        def bulldoze_entries
+            current = 0
+            last = entries.length - 1
+        
+            while current <= last
+                entries.delete_at(current)
+                last -= 1
+            end
+        end
     end

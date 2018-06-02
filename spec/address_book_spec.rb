@@ -207,4 +207,13 @@ RSpec.describe AddressBook do
         end
     end
     
+    describe "#bulldoze_entries" do
+        it "deletes all entries from the address_book" do
+            book.import_from_csv("entries.csv")
+            book.bulldoze_entries
+            
+            expect(book.entries.size).to eq(0)
+        end
+    end
+    
 end
