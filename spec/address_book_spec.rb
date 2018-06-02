@@ -107,6 +107,27 @@ RSpec.describe AddressBook do
             
             expect(book_size).to eq(3)
         end
+        
+        it "imports 1st entry" do
+            book.import_from_csv("entries_2.csv")
+            entry_one = book.entries[0]
+            
+            check_entry(entry_one, "Abel", "803-495-9376", "abel@blocmail.com")
+        end
+        
+        it "imports 2nd entry" do
+            book.import_from_csv("entries_2.csv")
+            entry_two = book.entries[1]
+            
+            check_entry(entry_two, "Sam", "803-673-9594", "sam@blocmail.com")
+        end
+        
+        it "imports 3rd entry" do
+            book.import_from_csv("entries_2.csv")
+            entry_three = book.entries[2]
+            
+            check_entry(entry_three, "Summer", "803-673-4215", "summer@blocmail.com")
+        end
     end
     
     describe "#binary_search" do
