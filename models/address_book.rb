@@ -64,16 +64,10 @@ require 'csv'
         end
         
         def iterative_search(name)
-            lower = 0
-            upper = entries.length - 1
             
-            while lower <= upper
-                iterative_name = entries[lower].name
-                
-                if name == iterative_name
-                    return entries[lower]
-                else
-                    lower += 1
+            entries.each do |entry|
+                if entry.name == name
+                    return entry
                 end
             end
             
